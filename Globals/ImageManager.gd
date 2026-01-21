@@ -1,11 +1,28 @@
 extends Node
 
+const FRAME_IMAGES: Array[Texture2D] = [
+	preload("res://assets/frames/blue_frame.png"),
+	preload("res://assets/frames/green_frame.png"),
+	preload("res://assets/frames/red_frame.png"),
+	preload("res://assets/frames/yellow_frame.png")
+]
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+var _image_list : Array[Texture2D]
+
+func _enter_tree() -> void:
+	var ifl: ImageFilesListResource = load("res://Resources/image_files_list.tres")
+	for file in ifl.file_names:
+		_image_list.append(load(file))
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func get_random_item_image() -> Texture2D:
+	return _image_list.pick_random()
+
+func get_random_frame_image() -> Texture2D:
+	return FRAME_IMAGES.pick_random()
+
+func get_image(index: int) -> Texture2D:
+	return _image_list[index]
+	
+func shuffle_images() -> void:
+	_image_list.shuffle()
