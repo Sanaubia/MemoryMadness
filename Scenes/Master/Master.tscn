@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy6b82uw10u3b"]
+[gd_scene load_steps=3 format=3 uid="uid://dy6b82uw10u3b"]
 
 [ext_resource type="Texture2D" uid="uid://uyh1vd8bbksq" path="res://assets/images/backgroundEmpty.png" id="1_h6g34"]
+[ext_resource type="PackedScene" uid="uid://dwxrys4ct1nbi" path="res://Scenes/Main/Main.tscn" id="2_o4rt4"]
 
 [node name="Master" type="Control"]
 layout_mode = 3
@@ -21,3 +22,6 @@ texture = ExtResource("1_h6g34")
 expand_mode = 1
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+
+[node name="Main" parent="." instance=ExtResource("2_o4rt4")]
+layout_mode = 1
