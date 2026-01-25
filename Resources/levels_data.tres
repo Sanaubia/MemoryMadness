@@ -21,7 +21,7 @@ metadata/_custom_type_script = "uid://6otljgcc51a1"
 script = ExtResource("1_o0sab")
 level_number = 3
 rows = 4
-cols = 5
+cols = 4
 metadata/_custom_type_script = "uid://6otljgcc51a1"
 
 [sub_resource type="Resource" id="Resource_0amg5"]
