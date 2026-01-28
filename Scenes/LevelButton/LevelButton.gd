@@ -10,8 +10,5 @@ func _ready() -> void:
 	else:
 		label.text = "%dx%d" % [ls.get_cols(), ls.get_rows()]
 
-
-
-
 func _on_pressed() -> void:
-	pass # Replace with function body.
+	SignalHub.emit_on_level_selected(level_number)

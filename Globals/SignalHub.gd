@@ -1,11 +1,10 @@
-extends Node2D
+extends Node
 
+signal on_level_selected(level_num: int)
+signal on_game_exit_pressed
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
+func emit_on_level_selected(level_num: int) -> void:
+	on_level_selected.emit(level_num)
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func emit_on_game_exit_pressed() -> void:
+	on_game_exit_pressed.emit()
