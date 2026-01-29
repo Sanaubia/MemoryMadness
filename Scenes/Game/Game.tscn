@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ca8bu7gsyepo7"]
 
 [ext_resource type="Script" uid="uid://drx4p0t40ot8v" path="res://Scenes/Game/Game.gd" id="1_3k6gv"]
-[ext_resource type="Texture2D" uid="uid://bruq5mgs8ebgq" path="res://assets/frames/hidden_frame_blank.png" id="1_gwu2e"]
+[ext_resource type="PackedScene" uid="uid://bvfkprtlw24xa" path="res://Scenes/MemoryTile/MemoryTile.tscn" id="2_3k6gv"]
 [ext_resource type="Texture2D" uid="uid://dj4o70iqsvt60" path="res://assets/ui/blue_button00.png" id="2_xbxml"]
 [ext_resource type="LabelSettings" uid="uid://dhhouwadecnak" path="res://Resources/DarkLable_24.tres" id="2_y3kpf"]
 [ext_resource type="LabelSettings" uid="uid://c18wuy3028ll" path="res://Resources/WhiteLable_24.tres" id="3_y3kpf"]
@@ -28,27 +28,21 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 6
 columns = 6
 
-[node name="TextureRect" type="TextureRect" parent="HBoxContainer/GridContainer"]
+[node name="MemoryTile" parent="HBoxContainer/GridContainer" instance=ExtResource("2_3k6gv")]
 layout_mode = 2
-texture = ExtResource("1_gwu2e")
 
-[node name="TextureRect2" type="TextureRect" parent="HBoxContainer/GridContainer"]
+[node name="MemoryTile2" parent="HBoxContainer/GridContainer" instance=ExtResource("2_3k6gv")]
 layout_mode = 2
-texture = ExtResource("1_gwu2e")
 
-[node name="TextureRect3" type="TextureRect" parent="HBoxContainer/GridContainer"]
+[node name="MemoryTile3" parent="HBoxContainer/GridContainer" instance=ExtResource("2_3k6gv")]
 layout_mode = 2
-texture = ExtResource("1_gwu2e")
 
-[node name="TextureRect4" type="TextureRect" parent="HBoxContainer/GridContainer"]
+[node name="MemoryTile4" parent="HBoxContainer/GridContainer" instance=ExtResource("2_3k6gv")]
 layout_mode = 2
-texture = ExtResource("1_gwu2e")
-
-[node name="TextureRect5" type="TextureRect" parent="HBoxContainer/GridContainer"]
-layout_mode = 2
-texture = ExtResource("1_gwu2e")
 
 [node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
