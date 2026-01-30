@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://ca8bu7gsyepo7"]
+[gd_scene load_steps=7 format=3 uid="uid://ca8bu7gsyepo7"]
 
 [ext_resource type="Script" uid="uid://drx4p0t40ot8v" path="res://Scenes/Game/Game.gd" id="1_3k6gv"]
 [ext_resource type="Texture2D" uid="uid://dj4o70iqsvt60" path="res://assets/ui/blue_button00.png" id="2_xbxml"]
 [ext_resource type="LabelSettings" uid="uid://dhhouwadecnak" path="res://Resources/DarkLable_24.tres" id="2_y3kpf"]
 [ext_resource type="LabelSettings" uid="uid://c18wuy3028ll" path="res://Resources/WhiteLable_24.tres" id="3_y3kpf"]
 [ext_resource type="Texture2D" uid="uid://bojeajchkkaml" path="res://assets/ui/green_button00.png" id="4_ln2h6"]
+[ext_resource type="PackedScene" uid="uid://c2srl5nyaogsu" path="res://Scenes/Scorer/Scorer.tscn" id="6_3k6gv"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -92,5 +93,7 @@ text = "Exit"
 label_settings = ExtResource("3_y3kpf")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Scorer" parent="." instance=ExtResource("6_3k6gv")]
 
 [connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
