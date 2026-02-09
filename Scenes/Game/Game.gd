@@ -3,6 +3,8 @@ extends Control
 const MEMORY_TILE = preload("res://Scenes/MemoryTile/MemoryTile.tscn")
 
 @onready var tile_grid: GridContainer = $HBoxContainer/TileGrid
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var scorer: Scorer = $Scorer
 
 
 # Called when the node enters the scene tree for the first time.
@@ -24,8 +26,12 @@ func on_level_selected(level_num: int) -> void:
 	tile_grid.columns = lds.get_num_cols()
 	for im in lds.get_selected_images():
 		add_memory_tile(im, fi)
+		
+	scorer.clear_new_game(lds.get_target_pairs())
 	
 func _on_exit_button_pressed() -> void:
 	for t in tile_grid.get_children():
 		t.queue_free()
+	
+	SoundManager.play_button_click(audio_stream_player)
 	SignalHub.emit_on_game_exit_pressed()

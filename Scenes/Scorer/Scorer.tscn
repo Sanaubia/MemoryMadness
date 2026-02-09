@@ -9,8 +9,8 @@ script = ExtResource("1_pmgxc")
 [node name="Sound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_0k60u")
 
-[node name="RevealsTimer" type="Timer" parent="."]
+[node name="RevealTimer" type="Timer" parent="."]
 wait_time = 1.2
 one_shot = true
 
-[connection signal="timeout" from="RevealsTimer" to="." method="_on_reveals_timer_timeout"]
+[connection signal="timeout" from="RevealTimer" to="." method="_on_reveal_timer_timeout"]

@@ -96,4 +96,6 @@ vertical_alignment = 1
 
 [node name="Scorer" parent="." instance=ExtResource("6_3k6gv")]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
 [connection signal="pressed" from="HBoxContainer/MarginContainer/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]
