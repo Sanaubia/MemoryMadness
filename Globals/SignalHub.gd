@@ -3,6 +3,10 @@ extends Node
 signal on_level_selected(level_num: int)
 signal on_game_exit_pressed
 signal on_tile_selected(tile: MemoryTile)
+signal on_game_over
+
+func emit_on_game_over() -> void:
+	on_game_over.emit()
 
 func emit_on_level_selected(level_num: int) -> void:
 	on_level_selected.emit(level_num)
